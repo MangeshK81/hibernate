@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC connection settings -->
+        <property name="connection.driver_class">org.h2.Driver</property>
+         <property name="connection.driver_class">org.h2.Driver</property>
+        <property name="connection.url">jdbc:h2:~/employees;INIT=RUNSCRIPT FROM
+            'C:\\Mangesh\\Learnings\\Angular6_RestNodeMongo\\com.hibernateexamples\\src\\main\\resources\\create_tables.sql'\;RUNSCRIPT FROM
+            'C:\\Mangesh\\Learnings\\Angular6_RestNodeMongo\\com.hibernateexamples\\src\\main\\resources\\init.sql'
+        </property>
+        
+        
+<!--         <property name="connection.url">jdbc:derby://localhost:1527/testdb/employees;INIT=RUNSCRIPT FROM
+            '\\src\\main\\resources\\create_tables.sql'\;RUNSCRIPT FROM
+            '\\src\\main\\resources\\init.sql'
+        </property> -->
+        <property name="connection.username">sa</property>
+        <property name="connection.password"/>
+
+        <!-- JDBC connection pool, use Hibernate internal connection pool -->
+        <property name="connection.pool_size">5</property>
+
+        <!-- Defines the SQL dialect used in Hibernate's application -->
+        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+
+        <!-- Display and format all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <!--<property name="format_sql">true</property>-->
+        <!--<property name="use_sql_comments">true</property>-->
+
+        <property name="hbm2ddl.auto">update</property>
+
+        <mapping class="com.hibernateexamples.entities.Employee"/>
+        <mapping class="com.hibernateexamples.entities.Address"/>
+
+    </session-factory>
+</hibernate-configuration>
